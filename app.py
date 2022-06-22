@@ -1,5 +1,6 @@
 from flask import Flask, redirect, request, render_template
 import search as sr
+
 app = Flask(__name__)
 
 
@@ -34,8 +35,8 @@ def translatorr():
         "langv": list(lang.keys()),
         "langse": "en",
         "langvles": "english",
-        "question": "Enter text",
-        "answer": "Translation"
+        "answer": "Translation",
+        "title": "Language Translator"
     } 
     if request.method == 'POST':
         query = request.form.get('question')
@@ -51,11 +52,11 @@ def translatorr():
             "langvles": langvle,
             "langqu": langq.lower(),
             "question": query,
-            "answer": trans_result
+            "answer": trans_result,
+            "title": query
         }
     return render_template("translator.html",data=data)
 
-
-
 if __name__ == '__main__':
    app.run(host="192.168.29.27",port=800)
+    # app.run()

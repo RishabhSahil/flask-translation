@@ -1,4 +1,3 @@
-from this import d
 from bs4 import BeautifulSoup as bs
 import requests
 from googletrans import Translator, constants
@@ -31,7 +30,8 @@ def search_query(command):
                 "RISHABHINSTA App Download":"https://rishabh-app-store.herokuapp.com/details/rishabh-insta/",
                 "RISHABH":"http://rishabhsahil.github.io/",
                 "RISHABHINSTA":"http://rishabhinsta.herokuapp.com/",
-                "Spotify":"https://open.spotify.com/user/31esoiwso3lx6xbdngzzldeb5aw4?si=08eabc0b4f784b76"
+                "Spotify":"https://open.spotify.com/user/31esoiwso3lx6xbdngzzldeb5aw4?si=08eabc0b4f784b76",
+                "Linkdin":"https://www.linkedin.com/in/rishabh-kumar-221647242/"
             }
         }
         # qu=list(data["link"].keys())
@@ -235,7 +235,6 @@ def languages():
 
 def rishabh_translate(text,lang="en"):
     try:
-
         translater =Translator()
         result = translater.translate(text=text,dest=lang)
         return result
@@ -243,24 +242,35 @@ def rishabh_translate(text,lang="en"):
         pass
 
 
+# # data = languages()
+# # aa=list(data.keys()) 
+# # # # print(aa)
+# # # translator = Translator()
+# translation = rishabh_translate(text="aap kon hai？",lang="en")
+# # print(f"{translation.origin} ({translation.src}) --> {translation.text} ({translation.dest})")
+
+# # for i in aa:
+# #     i
+# #     # print(i)
+# #     for j in range(0,1):
+# #         j
+# #         # print(i)
+# #         if i == translation.src:
+# #             print(data[translation.src])
+# #         if i == translation.dest:
+# #             print(data[translation.dest])
+# #         # print(data[i])
+# #         # print(j)
+
+# #     # print(data)
+
 # data = languages()
-# aa=list(data.keys()) 
-# # # print(aa)
-# # translator = Translator()
-# translation = rishabh_translate(text="你叫什么名字？",lang="en")
+# data2=list(data.keys())
 # print(f"{translation.origin} ({translation.src}) --> {translation.text} ({translation.dest})")
-
-# for i in aa:
-#     i
+# lang = translation.src
+# for i in data2:
 #     # print(i)
+#     i
 #     for j in range(0,1):
-#         j
-#         # print(i)
-#         if i == translation.src:
-#             print(data[translation.src])
-#         if i == translation.dest:
-#             print(data[translation.dest])
-#         # print(data[i])
-#         # print(j)
-
-#     # print(data)
+#         if i==lang.lower():
+#             print(data[i])
